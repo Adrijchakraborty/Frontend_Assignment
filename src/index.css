@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+.theme1 {
+  background-color: white;
+  color: black;
+  font-family: 'Arial', sans-serif;
+}
+.theme2 {
+  background-color: #121212;
+  color: white;
+  font-family: 'Georgia', serif;
+}
+.theme3 {
+  background-color: #ffe0f0;
+  color: #4b0082;
+  font-family: 'Pacifico', cursive;
+}
+
+.theme1 .theme-hover {
+  @apply hover:bg-gray-200;
+}
+
+.theme2 .theme-hover {
+  @apply hover:bg-gray-800;
+}
+
+.theme3 .theme-hover {
+  @apply hover:bg-pink-200;
+}
+
