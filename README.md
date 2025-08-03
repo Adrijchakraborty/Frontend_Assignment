@@ -52,8 +52,8 @@ The application also fetches product data from an external API and displays it r
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/multitheme-app.git
-cd multitheme-app
+git clone https://github.com/Adrijchakraborty/Frontend_Assignment.git
+cd Frontend_Assignment
 ```
 ### 2. Install dependencies
 ```bash
@@ -86,3 +86,4 @@ src/
 ├── main.tsx
 └── index.css
 ```
+## Developed by: Adrij Chakraborty
