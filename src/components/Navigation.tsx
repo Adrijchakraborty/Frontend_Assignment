@@ -1,14 +1,14 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 
 const Navigation: React.FC = () => {
-    return (
-        <div className='flex gap-4'>
-            <Link to={'/'}>Home</Link>
-            <Link to={'/about'}>About</Link>
-            <Link to={'/contact'}>Contact</Link>
-        </div>
-    )
+  return (
+    <nav className="flex flex-col md:flex-row gap-2 md:gap-4 text-lg">
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+      <Link to="/contact">Contact</Link>
+    </nav>
+  )
 }
 
 export default Navigation

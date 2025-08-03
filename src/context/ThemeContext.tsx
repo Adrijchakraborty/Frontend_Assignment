@@ -1,26 +1,42 @@
-import React, { createContext, useContext, useState, useEffect } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
-export type Theme = 'theme1' | 'theme2' | 'theme3';
+export type Theme = 'theme1' | 'theme2' | 'theme3'
 
-const ThemeContext = createContext({
-  theme: 'theme1' as Theme,
-  setTheme: (theme: Theme) => {}
-})
+interface ThemeContextType {
+  theme: Theme
+  setTheme: (theme: Theme) => void
+}
 
-export const useTheme = () => useContext(ThemeContext)
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    return (localStorage.getItem('theme') as Theme) || 'theme1'
-  })
+  const [theme, setThemeState] = useState<Theme>('theme1')
+
+  useEffect(() => {
+    const stored = localStorage.getItem('theme') as Theme
+    if (stored) setThemeState(stored)
+  }, [])
 
   useEffect(() => {
     localStorage.setItem('theme', theme)
+
+    // Animate theme transition by using opacity + fade
+    const body = document.body
+    body.classList.add('transition-all', 'duration-500')
+    body.className = theme // also sets .theme1, .theme2, .theme3
   }, [theme])
+
+  const setTheme = (newTheme: Theme) => setThemeState(newTheme)
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div className={`app ${theme}`}>{children}</div>
+      {children}
     </ThemeContext.Provider>
   )
+}
+
+export const useTheme = () => {
+  const context = useContext(ThemeContext)
+  if (!context) throw new Error('useTheme must be used within ThemeProvider')
+  return context
 }

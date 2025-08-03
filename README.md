@@ -1,69 +1,88 @@
-# React + TypeScript + Vite
+# 🎨 Multi-Theme React Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript project built for the **Hipster Pte. Ltd. Frontend Developer Assessment**.  
+The application showcases three fully distinct themes, responsive layouts, and dynamic content fetching.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔍 Project Overview
 
-## Expanding the ESLint configuration
+This project demonstrates a **theme-switcher application** where users can toggle between **three unique themes** that differ in:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Layout structure
+- Font styles
+- Color schemes
+- Component rendering (e.g., sidebar, card-based layouts)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The application also fetches product data from an external API and displays it responsively.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Features
+
+- ✅ Fixed header with logo and theme dropdown
+- ✅ **Three distinct themes**:
+  - **Theme 1** – Minimalist, light background, sans-serif font
+  - **Theme 2** – Dark mode, sidebar layout, serif font
+  - **Theme 3** – Colorful card-based grid layout, playful font
+- ✅ Theme changes include fonts, layouts, margins, and hover effects
+- ✅ Theme persists across reloads using `localStorage`
+- ✅ Uses **Context API** for theme state management
+- ✅ Responsive design using **Tailwind CSS**
+- ✅ Product cards fetched from [https://fakestoreapi.com/products](https://fakestoreapi.com/products)
+- ✅ Routing for **Home**, **About**, and **Contact** pages using `React Router`
+- ✅ Subtle animation for theme transitions
+- ✅ Fully mobile and desktop compatible
+- ✅ Built without large UI libraries (no MUI, Ant Design)
+
+---
+
+## 🛠️ Tech Stack
+
+- **React** (with Hooks)
+- **TypeScript**
+- **Tailwind CSS (JIT mode)**
+- **React Router v6**
+- **Context API**
+- **Vite** (for fast dev/build)
+
+---
+
+## 📦 Installation & Setup
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/multitheme-app.git
+cd multitheme-app
+```
+### 2. Install dependencies
+```bash
+npm install
+```
+### 3. Start development server
+```bash
+npm run dev
+```
+### 4. Build for production
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🗂️ Folder Structure
+```bash
+src/
+├── components/
+│   ├── Header.tsx
+│   └── Navigation.tsx
+├── context/
+│   └── ThemeContext.tsx
+├── layout/
+│   └── AppLayout.tsx
+├── pages/
+│   ├── Home.tsx
+│   ├── About.tsx
+│   └── Contact.tsx
+├── App.tsx
+├── main.tsx
+└── index.css
 ```

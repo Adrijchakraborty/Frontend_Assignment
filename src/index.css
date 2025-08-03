@@ -1,30 +1,32 @@
+/* Import playful font for theme3 */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import "tailwindcss";
 
+/* Theme styles using CSS variables */
 .theme1 {
-  background-color: white;
-  color: black;
+  --bg: white;
+  --text: black;
+  --hover-bg: #e5e7eb; /* Tailwind gray-200 */
   font-family: 'Arial', sans-serif;
 }
+
 .theme2 {
-  background-color: #121212;
-  color: white;
+  --bg: #121212;
+  --text: white;
+  --hover-bg: #1f2937; /* Tailwind gray-800 */
   font-family: 'Georgia', serif;
 }
+
 .theme3 {
-  background-color: #ffe0f0;
-  color: #4b0082;
+  --bg: #f0f8ff;
+  --text: #ff4500;
+  --hover-bg: #e0f7fa;
   font-family: 'Pacifico', cursive;
 }
 
-.theme1 .theme-hover {
-  @apply hover:bg-gray-200;
+/* Apply variables to body */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-.theme2 .theme-hover {
-  @apply hover:bg-gray-800;
-}
-
-.theme3 .theme-hover {
-  @apply hover:bg-pink-200;
-}
-
