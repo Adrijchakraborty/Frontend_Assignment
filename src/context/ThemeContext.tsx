@@ -20,10 +20,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   useEffect(() => {
     localStorage.setItem('theme', theme)
 
-    // Animate theme transition by using opacity + fade
     const body = document.body
     body.classList.add('transition-all', 'duration-500')
-    body.className = theme // also sets .theme1, .theme2, .theme3
+    body.className = theme
   }, [theme])
 
   const setTheme = (newTheme: Theme) => setThemeState(newTheme)

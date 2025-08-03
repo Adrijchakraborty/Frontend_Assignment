@@ -10,8 +10,9 @@ const Home: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
 
+  
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products?limit=6') // limit to keep it light
+    fetch('https://fakestoreapi.com/products?limit=6')
       .then((res) => res.json())
       .then((data) => {
         setProducts(data)

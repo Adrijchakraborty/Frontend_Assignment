@@ -1,19 +1,17 @@
-/* Import playful font for theme3 */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import "tailwindcss";
 
-/* Theme styles using CSS variables */
 .theme1 {
   --bg: white;
   --text: black;
-  --hover-bg: #e5e7eb; /* Tailwind gray-200 */
+  --hover-bg: #e5e7eb;
   font-family: 'Arial', sans-serif;
 }
 
 .theme2 {
   --bg: #121212;
   --text: white;
-  --hover-bg: #1f2937; /* Tailwind gray-800 */
+  --hover-bg: #1f2937;
   font-family: 'Georgia', serif;
 }
 
@@ -24,7 +22,6 @@
   font-family: 'Pacifico', cursive;
 }
 
-/* Apply variables to body */
 body {
   background-color: var(--bg);
   color: var(--text);
